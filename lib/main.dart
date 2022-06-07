@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       scrollBehavior: AppScrollBehavior(),
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'P2W Cards',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch().copyWith(
           primary: Colors.white,
