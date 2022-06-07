@@ -82,31 +82,39 @@ class ProductCarouselItem extends StatelessWidget {
                 height: 10,
               ),
               Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.symmetric(horizontal: 100),
                 child: Column(
                   children: [
-                    Container(
-                      margin: const EdgeInsets.all(8.0),
-                      child: const TextField(
-                        decoration: InputDecoration.collapsed(
-                          hintText: "Nome",
+                    const InputFormText(
+                      labelText: 'Nome',
+                    ),
+                    const InputFormText(
+                      labelText: 'CPF',
+                    ),
+                    const InputFormText(
+                      labelText: 'E-mail',
+                    ),
+                    const InputFormText(
+                      labelText: 'Telefone',
+                    ),
+                    ElevatedButton(
+                      autofocus: true,
+                      onPressed: () {},
+                      child: Text(
+                        'COMPRAR',
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.primary,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.all(8.0),
-                      child: const TextField(
-                        decoration: InputDecoration.collapsed(
-                          hintText: "CPF",
+                      style: ElevatedButton.styleFrom(
+                        primary: Theme.of(context).colorScheme.secondary,
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 20,
+                          horizontal: 30,
                         ),
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.all(8.0),
-                      child: const TextField(
-                        decoration: InputDecoration.collapsed(
-                          hintText: "E-mail",
-                        ),
+                        alignment: Alignment.center,
                       ),
                     ),
                   ],
@@ -115,6 +123,35 @@ class ProductCarouselItem extends StatelessWidget {
             ],
           );
         },
+      ),
+    );
+  }
+}
+
+class InputFormText extends StatelessWidget {
+  const InputFormText({
+    Key? key,
+    required this.labelText,
+  }) : super(key: key);
+
+  final String labelText;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 8,
+        vertical: 8,
+      ),
+      child: TextField(
+        decoration: InputDecoration(
+          border: const OutlineInputBorder(),
+          focusedBorder: const OutlineInputBorder(),
+          labelText: labelText,
+          floatingLabelStyle: const TextStyle(
+            color: Colors.black,
+          ),
+        ),
       ),
     );
   }
