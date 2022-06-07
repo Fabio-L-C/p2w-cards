@@ -98,7 +98,6 @@ class ProductCarouselItem extends StatelessWidget {
                       labelText: 'Telefone',
                     ),
                     ElevatedButton(
-                      autofocus: true,
                       onPressed: () {},
                       child: Text(
                         'COMPRAR',
