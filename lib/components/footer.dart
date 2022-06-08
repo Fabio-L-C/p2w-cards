@@ -35,18 +35,44 @@ class Footer extends StatelessWidget {
               fontSize: 13,
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Text(
-                'Termos e Condições',
-                style: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
-                  fontSize: 20,
+          MediaQuery.of(context).size.width > 600
+              ? Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Text(
+                      'Termos e Condições',
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
+                        fontSize: 20,
+                      ),
+                    ),
+                    const PrivacyPolicyButton(
+                      fontSize: 20,
+                    ),
+                  ],
+                )
+              : Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    const SizedBox(height: 10),
+                    Text(
+                      'Termos e Condições',
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
+                        fontSize: 13,
+                      ),
+                    ),
+                    const PrivacyPolicyButton(
+                      fontSize: 13,
+                    ),
+                  ],
                 ),
-              ),
-              const PrivacyPolicButton(),
-            ],
+          Text(
+            'P2W © 2022',
+            style: TextStyle(
+              color: Theme.of(context).colorScheme.primary,
+              fontSize: 13,
+            ),
           ),
         ],
       ),

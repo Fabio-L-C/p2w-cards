@@ -24,6 +24,8 @@ class ProductCarouselItem extends StatelessWidget {
             context: context,
             children: [
               Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
                     product.imageUrl,
