@@ -32,7 +32,10 @@ class _PrivacyPolicyButtonState extends State<PrivacyPolicyButton> {
           context: context,
           builder: (context) => const SimpleDialog(
             title: Text('Política de Privacidade'),
-            contentPadding: EdgeInsets.all(10),
+            contentPadding: EdgeInsets.symmetric(
+              horizontal: 20,
+              vertical: 10,
+            ),
             titlePadding: EdgeInsets.all(10),
             children: [
               PrivacyPolicyAboutDialog(),

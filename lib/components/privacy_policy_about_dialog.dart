@@ -39,7 +39,7 @@ class _PrivacyPolicyAboutDialogState extends State<PrivacyPolicyAboutDialog> {
               ),
             ),
           ),
-          const SizedBox(height: 80),
+          const SizedBox(height: 40),
           Text(
             language,
             textAlign: TextAlign.justify,
