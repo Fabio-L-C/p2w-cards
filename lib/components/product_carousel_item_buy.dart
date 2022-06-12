@@ -39,23 +39,27 @@ class ProductCarouselItemBuy extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {
-              showAboutDialog(
+              showDialog(
                 context: context,
-                applicationName: 'Pagar com Pix',
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(10),
-                    margin: const EdgeInsets.all(10),
-                    width: 400,
-                    height: 400,
-                    color: Colors.amber,
-                    child: QrImage(
-                      data: pixFlutter.getQRCode(),
-                      // data: 'Gomu Gomu no MI',
-                      size: 100,
+                builder: (context) => SimpleDialog(
+                  title: const Text('Código de Pagamento'),
+                  contentPadding: const EdgeInsets.all(10),
+                  titlePadding: const EdgeInsets.all(10),
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      margin: const EdgeInsets.all(10),
+                      width: 400,
+                      height: 400,
+                      color: Colors.amber,
+                      child: QrImage(
+                        data: pixFlutter.getQRCode(),
+                        // data: 'Gomu Gomu no MI',
+                        size: 100,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               );
             },
             child: Text(

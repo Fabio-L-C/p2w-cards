@@ -28,12 +28,16 @@ class _PrivacyPolicyButtonState extends State<PrivacyPolicyButton> {
       ),
       onHover: (value) => setState(() => isHover = value),
       onPressed: () {
-        showAboutDialog(
-          applicationName: 'P2W Cards',
+        showDialog(
           context: context,
-          children: [
-            const PrivacyPolicyAboutDialog(),
-          ],
+          builder: (context) => const SimpleDialog(
+            title: Text('Política de Privacidade'),
+            contentPadding: EdgeInsets.all(10),
+            titlePadding: EdgeInsets.all(10),
+            children: [
+              PrivacyPolicyAboutDialog(),
+            ],
+          ),
         );
       },
     );
