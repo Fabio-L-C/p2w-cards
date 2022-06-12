@@ -9,7 +9,7 @@ List<MainCarouselModel> MAIN_CAROUSEL_LIST = [
     title: 'GTA V',
     description:
         'Grand Theft Auto V é um jogo eletrônico de ação-aventura desenvolvido pela Rockstar North e publicado pela Rockstar Games.',
-    price: 10.0,
+    price: 11.0,
   ),
   MainCarouselModel(
     id: '02',
@@ -17,7 +17,7 @@ List<MainCarouselModel> MAIN_CAROUSEL_LIST = [
     title: 'Minecraft',
     description:
         'Um jogo eletrônico sandbox de sobrevivência criado pelo desenvolvedor sueco Markus "Notch" Persson e posteriormente desenvolvido e publicado pela Mojang Studios.',
-    price: 10.0,
+    price: 12.0,
   ),
   MainCarouselModel(
     id: '03',
@@ -25,7 +25,7 @@ List<MainCarouselModel> MAIN_CAROUSEL_LIST = [
     title: 'Counter-Strike: Global Offensive',
     description:
         'É um jogo online desenvolvido pela Valve Corporation e pela Hidden Path Entertainment, sendo uma sequência de Counter-Strike.',
-    price: 10.0,
+    price: 13.0,
   ),
   MainCarouselModel(
     id: '04',
@@ -33,6 +33,6 @@ List<MainCarouselModel> MAIN_CAROUSEL_LIST = [
     title: 'League of Legends',
     description:
         'É um jogo eletrônico do gênero multiplayer online battle arena desenvolvido e publicado pela Riot Games.',
-    price: 10.0,
+    price: 14.0,
   ),
 ];

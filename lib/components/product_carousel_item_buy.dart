@@ -15,11 +15,11 @@ class ProductCarouselItemBuy extends StatelessWidget {
   Widget build(BuildContext context) {
     PixFlutter pixFlutter = PixFlutter(
       payload: Payload(
-        pixKey: '123456789',
+        pixKey: '14813676766',
         description: product.title,
         amount: product.price.toString(),
         txid: product.id,
-        merchantCity: 'New York',
+        merchantCity: 'Castelo',
         merchantName: 'P2W',
       ),
     );
@@ -38,7 +38,26 @@ class ProductCarouselItemBuy extends StatelessWidget {
             labelText: 'E-mail',
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              showAboutDialog(
+                context: context,
+                applicationName: 'Pagar com Pix',
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    margin: const EdgeInsets.all(10),
+                    width: 400,
+                    height: 400,
+                    color: Colors.amber,
+                    child: QrImage(
+                      data: pixFlutter.getQRCode(),
+                      // data: 'Gomu Gomu no MI',
+                      size: 100,
+                    ),
+                  ),
+                ],
+              );
+            },
             child: Text(
               'COMPRAR',
               style: TextStyle(
@@ -54,18 +73,6 @@ class ProductCarouselItemBuy extends StatelessWidget {
                 horizontal: 30,
               ),
               alignment: Alignment.center,
-            ),
-          ),
-          Container(
-            padding: const EdgeInsets.all(10),
-            margin: const EdgeInsets.all(10),
-            width: 400,
-            height: 400,
-            color: Colors.amber,
-            child: QrImage(
-              data: pixFlutter.getQRCode(),
-              // data: 'Gomu Gomu no MI',
-              size: 100,
             ),
           ),
         ],
