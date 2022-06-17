@@ -13,6 +13,10 @@ class ProductCarouselItemBuy extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController nomeController = TextEditingController();
+    TextEditingController cpfController = TextEditingController();
+    TextEditingController emailController = TextEditingController();
+
     PixFlutter pixFlutter = PixFlutter(
       payload: Payload(
         pixKey: '14813676766',
@@ -28,39 +32,64 @@ class ProductCarouselItemBuy extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 100),
       child: Column(
         children: [
-          const InputFormText(
+          InputFormText(
             labelText: 'Nome',
+            controller: nomeController,
           ),
-          const InputFormText(
+          InputFormText(
             labelText: 'CPF',
+            controller: cpfController,
           ),
-          const InputFormText(
+          InputFormText(
             labelText: 'E-mail',
+            controller: emailController,
           ),
           ElevatedButton(
             onPressed: () {
-              showDialog(
-                context: context,
-                builder: (context) => SimpleDialog(
-                  title: const Text('Código de Pagamento'),
-                  contentPadding: const EdgeInsets.all(10),
-                  titlePadding: const EdgeInsets.all(10),
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      margin: const EdgeInsets.all(10),
-                      width: 400,
-                      height: 400,
-                      color: Colors.amber,
-                      child: QrImage(
-                        data: pixFlutter.getQRCode(),
-                        // data: 'Gomu Gomu no MI',
-                        size: 100,
+              if (nomeController.text.isNotEmpty &&
+                  cpfController.text.isNotEmpty &&
+                  emailController.text.isNotEmpty) {
+                showDialog(
+                  context: context,
+                  builder: (context) => SimpleDialog(
+                    title: const Text('Código de Pagamento'),
+                    contentPadding: const EdgeInsets.all(10),
+                    titlePadding: const EdgeInsets.all(10),
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(10),
+                        margin: const EdgeInsets.all(10),
+                        width: 400,
+                        height: 400,
+                        color: Colors.amber,
+                        child: QrImage(
+                          data: pixFlutter.getQRCode(),
+                          // data: 'Gomu Gomu no MI',
+                          size: 100,
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              );
+                    ],
+                  ),
+                );
+              } else {
+                showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                    title: const Text('Preencha todos os campos'),
+                    actions: [
+                      TextButton(
+                        child: const Text(
+                          'OK',
+                          style: TextStyle(color: Colors.black),
+                        ),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                      ),
+                    ],
+                  ),
+                );
+              }
             },
             child: Text(
               'COMPRAR',
@@ -89,9 +118,11 @@ class InputFormText extends StatelessWidget {
   const InputFormText({
     Key? key,
     required this.labelText,
+    required this.controller,
   }) : super(key: key);
 
   final String labelText;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -101,6 +132,7 @@ class InputFormText extends StatelessWidget {
         vertical: 8,
       ),
       child: TextField(
+        controller: controller,
         decoration: InputDecoration(
           border: const OutlineInputBorder(),
           focusedBorder: const OutlineInputBorder(),
