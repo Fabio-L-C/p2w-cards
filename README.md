@@ -16,3 +16,10 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 <a href="https://p2w-cards-keys-dfc5e.web.app/#/" target="_blank">P2W Cards</a>
+
+
+Para usar a API do firebase 
+Crie um arquivo 'constants.dart'
+<pre> /lib/utils/constants.dart  </pre>
+E dentro dele coloque o seguinte código
+<pre> const BASE_URL = 'sua api key aki';  </pre>
