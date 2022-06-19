@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:p2w_cards/models/privacy_policy.dart';
-import 'package:p2w_cards/utils/privacy_policy_text.dart';
+import 'package:p2w_cards/data/privacy_policy_text.dart';
 
 class PrivacyPolicyAboutDialog extends StatefulWidget {
   const PrivacyPolicyAboutDialog({Key? key}) : super(key: key);

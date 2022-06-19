@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:p2w_cards/components/main_carousel.dart';
-import 'package:p2w_cards/data/main_carousel_data.dart';
+import 'package:p2w_cards/models/products_list.dart';
+import 'package:provider/provider.dart';
 
 class Header extends StatelessWidget {
   const Header({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final products = Provider.of<ProductsList>(context);
     return Column(
       children: [
         Row(
@@ -25,9 +27,9 @@ class Header extends StatelessWidget {
               width: MediaQuery.of(context).size.width * 0.5 - 96,
               height: MediaQuery.of(context).size.height * 0.5,
               child: PageView.builder(
-                itemCount: MAIN_CAROUSEL_LIST.length,
+                itemCount: products.productsCount,
                 itemBuilder: (context, index) => MainCarousel(
-                  mainCarouselModel: MAIN_CAROUSEL_LIST[index],
+                  productsModel: products.productsList[index],
                 ),
               ),
             ),

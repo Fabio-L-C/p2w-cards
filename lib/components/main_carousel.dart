@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:p2w_cards/models/main_carousel_model.dart';
+import 'package:p2w_cards/models/products.dart';
 
 class MainCarousel extends StatelessWidget {
   const MainCarousel({
     Key? key,
-    required this.mainCarouselModel,
+    required this.productsModel,
   }) : super(key: key);
 
-  final MainCarouselModel mainCarouselModel;
+  final ProductsModel productsModel;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class MainCarousel extends StatelessWidget {
         SizedBox(
           width: MediaQuery.of(context).size.width * 0.5 - 100,
           child: Image.asset(
-            mainCarouselModel.imageUrl,
+            productsModel.imageUrl,
             fit: BoxFit.cover,
           ),
         ),

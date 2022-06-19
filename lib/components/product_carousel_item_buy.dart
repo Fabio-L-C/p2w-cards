@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:p2w_cards/models/main_carousel_model.dart';
+import 'package:p2w_cards/models/products.dart';
 import 'package:pix_flutter/pix_flutter.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
@@ -9,7 +9,7 @@ class ProductCarouselItemBuy extends StatelessWidget {
     required this.product,
   }) : super(key: key);
 
-  final MainCarouselModel product;
+  final ProductsModel product;
 
   @override
   Widget build(BuildContext context) {

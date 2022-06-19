@@ -1,9 +1,9 @@
 // ignore_for_file: non_constant_identifier_names
 
-import 'package:p2w_cards/models/main_carousel_model.dart';
+import 'package:p2w_cards/models/products.dart';
 
-List<MainCarouselModel> MAIN_CAROUSEL_LIST = [
-  MainCarouselModel(
+List<ProductsModel> mainProductsData = [
+  ProductsModel(
     id: '01',
     imageUrl: 'assets/img/img_01.jpg',
     title: 'GTA V',
@@ -11,7 +11,7 @@ List<MainCarouselModel> MAIN_CAROUSEL_LIST = [
         'Grand Theft Auto V é um jogo eletrônico de ação-aventura desenvolvido pela Rockstar North e publicado pela Rockstar Games.',
     price: 11.0,
   ),
-  MainCarouselModel(
+  ProductsModel(
     id: '02',
     imageUrl: 'assets/img/img_02.jpg',
     title: 'Minecraft',
@@ -19,7 +19,7 @@ List<MainCarouselModel> MAIN_CAROUSEL_LIST = [
         'Um jogo eletrônico sandbox de sobrevivência criado pelo desenvolvedor sueco Markus "Notch" Persson e posteriormente desenvolvido e publicado pela Mojang Studios.',
     price: 12.0,
   ),
-  MainCarouselModel(
+  ProductsModel(
     id: '03',
     imageUrl: 'assets/img/img_03.jpg',
     title: 'Counter-Strike: Global Offensive',
@@ -27,7 +27,7 @@ List<MainCarouselModel> MAIN_CAROUSEL_LIST = [
         'É um jogo online desenvolvido pela Valve Corporation e pela Hidden Path Entertainment, sendo uma sequência de Counter-Strike.',
     price: 13.0,
   ),
-  MainCarouselModel(
+  ProductsModel(
     id: '04',
     imageUrl: 'assets/img/img_05.jpg',
     title: 'League of Legends',

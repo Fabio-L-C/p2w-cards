@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:p2w_cards/components/product_carousel_item_buy.dart';
-import 'package:p2w_cards/models/main_carousel_model.dart';
+import 'package:p2w_cards/models/products.dart';
 
 class ProductCarouselItem extends StatelessWidget {
   const ProductCarouselItem({
@@ -8,7 +8,7 @@ class ProductCarouselItem extends StatelessWidget {
     required this.product,
   }) : super(key: key);
 
-  final MainCarouselModel product;
+  final ProductsModel product;
 
   @override
   Widget build(BuildContext context) {
