@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:p2w_cards/models/privacy_policy_list.dart';
 import 'package:p2w_cards/models/products_list.dart';
 import 'package:p2w_cards/pages/home_page.dart';
 import 'package:p2w_cards/utils/app_scroll.dart';
@@ -13,8 +14,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => ProductsList(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => ProductsList(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => PrivacyPolicyList(),
+        ),
+      ],
       child: MaterialApp(
         scrollBehavior: AppScrollBehavior(),
         debugShowCheckedModeBanner: false,

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:p2w_cards/components/privacy_policy_about_dialog.dart';
+import 'package:p2w_cards/models/privacy_policy_list.dart';
+import 'package:provider/provider.dart';
 
 class PrivacyPolicyButton extends StatefulWidget {
   const PrivacyPolicyButton({

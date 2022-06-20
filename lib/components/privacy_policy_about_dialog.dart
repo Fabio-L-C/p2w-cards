@@ -2,7 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:p2w_cards/models/privacy_policy.dart';
-import 'package:p2w_cards/data/privacy_policy_text.dart';
+import 'package:p2w_cards/models/privacy_policy_list.dart';
+import 'package:provider/provider.dart';
 
 class PrivacyPolicyAboutDialog extends StatefulWidget {
   const PrivacyPolicyAboutDialog({Key? key}) : super(key: key);
@@ -16,13 +17,10 @@ class _PrivacyPolicyAboutDialogState extends State<PrivacyPolicyAboutDialog> {
   late String language;
 
   @override
-  void initState() {
-    super.initState();
-    language = POLITICA_DE_PRIVACIDADE[0].content;
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final politica = Provider.of<PrivacyPolicyList>(context, listen: false);
+    language = politica.privacyPolicyList[0].content;
+
     return SizedBox(
       width: 800,
       child: Column(
@@ -34,8 +32,8 @@ class _PrivacyPolicyAboutDialogState extends State<PrivacyPolicyAboutDialog> {
             child: GridView.count(
               crossAxisCount: 4,
               children: List.generate(
-                POLITICA_DE_PRIVACIDADE.length,
-                (index) => ContainerCountry(POLITICA_DE_PRIVACIDADE[index]),
+                politica.privacyPolicyCount,
+                (index) => ContainerCountry(politica.privacyPolicyList[index]),
               ),
             ),
           ),

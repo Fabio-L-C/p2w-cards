@@ -3,6 +3,7 @@ import 'package:p2w_cards/components/body.dart';
 import 'package:p2w_cards/components/footer.dart';
 import 'package:p2w_cards/components/header.dart';
 import 'package:p2w_cards/components/my_app_bar.dart';
+import 'package:p2w_cards/models/privacy_policy_list.dart';
 import 'package:p2w_cards/models/products_list.dart';
 import 'package:provider/provider.dart';
 
@@ -41,6 +42,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     Provider.of<ProductsList>(context).loadProducts();
+    Provider.of<PrivacyPolicyList>(context).loadPolicy();
 
     return Scaffold(
       appBar: MyAppBar(
