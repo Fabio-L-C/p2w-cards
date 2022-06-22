@@ -1,4 +1,7 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:p2w_cards/models/order.dart';
 import 'package:p2w_cards/models/products.dart';
 import 'package:pix_flutter/pix_flutter.dart';
 import 'package:qr_flutter/qr_flutter.dart';
@@ -71,6 +74,20 @@ class ProductCarouselItemBuy extends StatelessWidget {
                     ],
                   ),
                 );
+
+                ///
+                final Order order = Order(
+                  idPessoa: Random().nextDouble().toString(),
+                  nomePessoa: nomeController.text,
+                  emailPessoa: emailController.text,
+                  cpfPessoa: cpfController.text,
+                  idJogo: product.id,
+                  nomeJogo: product.title,
+                  price: product.price,
+                );
+                order.saveOrder();
+
+                ///
               } else {
                 showDialog(
                   context: context,

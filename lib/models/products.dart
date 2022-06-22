@@ -12,16 +12,4 @@ class ProductsModel {
     required this.description,
     required this.price,
   });
-
-  Map toMap() {
-    Map<String, dynamic> map = {
-      'id': id,
-      'imageUrl': imageUrl,
-      'title': title,
-      'description': description,
-      'price': price,
-    };
-
-    return map;
-  }
 }
