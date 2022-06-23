@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:p2w_cards/adm/adm_order.dart';
 import 'package:p2w_cards/adm/adm_page.dart';
 import 'package:p2w_cards/models/privacy_policy_list.dart';

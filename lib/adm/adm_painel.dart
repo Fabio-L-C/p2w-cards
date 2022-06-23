@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:p2w_cards/adm/adm_envio.dart';
 import 'package:p2w_cards/adm/adm_order.dart';
 import 'package:provider/provider.dart';
 
@@ -39,7 +40,6 @@ class AdmPainel extends StatelessWidget {
         DataCell(Text('${admOrder.orderList[index].price}')),
         DataCell(
           ElevatedButton(
-            onPressed: () {},
             child: const Text(
               'Enviar Codigo',
               style: TextStyle(
@@ -47,6 +47,11 @@ class AdmPainel extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
+            onPressed: () {
+              try {
+                AdmEnvio.enviar(admOrder.orderList[index]);
+              } catch (e) {}
+            },
           ),
         ),
       ],
