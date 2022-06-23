@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:p2w_cards/utils/app_routes.dart';
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MyAppBar({
@@ -23,13 +24,18 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           TextButton(
-            child: Text(
-              'P2W Cards',
-              style: TextStyle(
-                color: Theme.of(context).colorScheme.primary,
-                fontSize: isScrolled ? 40 : 20,
-                fontWeight: FontWeight.bold,
+            child: InkWell(
+              child: Text(
+                'P2W Cards',
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
+                  fontSize: isScrolled ? 40 : 20,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
+              onLongPress: () {
+                Navigator.of(context).pushNamed(AppRoutes.ADM_PAGE);
+              },
             ),
             onPressed: () {
               controller.animateTo(
