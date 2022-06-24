@@ -34,7 +34,12 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
               ),
               onLongPress: () {
-                Navigator.of(context).pushNamed(AppRoutes.ADM_PAGE);
+                //Navigator.of(context).pushNamed(AppRoutes.ADM_PAGE);
+                controller.animateTo(
+                0,
+                duration: const Duration(seconds: 1),
+                curve: Curves.fastOutSlowIn,
+              );
               },
             ),
             onPressed: () {
